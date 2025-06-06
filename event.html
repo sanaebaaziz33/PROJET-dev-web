@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Events Hub</title>
+  <link rel="stylesheet" href="event.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <img src="https://static-00.iconduck.com/assets.00/user-icon-1024x1024-dtzturco.png" alt="User Photo" class="user-photo">
+      <h2>Bonjour, <span id="username">Étudiant</span>!</h2>
+      <button class="btn-profile">Profil</button>
+       <ul class="menu-options">
+         <li><a href="#">Home</a></li>
+         <li><a href="#">Notifications</a></li>
+         <li><a href="#">Mes événements</a></li>
+         <li><a href="#">Créer un événement</a></li>
+         <li><a href="#">Paramètres</a></li>
+         <li><a href="#">Se déconnecter</a></li>
+       </ul>
+       <ul class="menu-options bottom-menu">
+         
+       </ul>
+    </aside>
+    <main class="main">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher un événement...">
+        <select id="categoryFilter">
+          <option value="">Toutes les catégories</option>
+          <option value="Club">Club</option>
+          <option value="Conférence">Conférence</option>
+          <option value="Sport">Sport</option>
+          <option value="Compétiton">Compétiton</option>
+          <option value="Découverte">Découverte</option>
+          <option value="Intégration">Intégration</option>
+        </select>
+      </div>
+
+      <section class="event-display">
+        <h1>Événements</h1>
+        <div class="event-slider-wrapper">
+          <button class="slider-btn left" onclick="scrollEvents(-1)">&#10094;</button>
+          <div class="event-slider" id="eventSlider"></div>
+          <button class="slider-btn right" onclick="scrollEvents(1)">&#10095;</button>
+        </div>
+      </section>
+
+      <section class="event-form">
+        <h2>Ajouter un événement</h2>
+        <form id="addEventForm">
+          <input type="text" id="title" placeholder="Titre de l'événement" required>
+          <textarea id="description" placeholder="Description" rows="3" required></textarea>
+          <input type="date" id="date" required>
+          <select id="category" required>
+            <option value="">Choisir une catégorie</option>
+            <option value="Club">Club</option>
+            <option value="Conférence">Conférence</option>
+            <option value="Sport">Sport</option>
+          </select>
+          <input type="text" id="lieu" placeholder="lieu de l'événement" required>
+          <input type="file" id="image" accept="image/*" required>
+          <button type="submit" class="btn-add">Ajouter</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="event.js"></script>
+</body>
+</html>            
